@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="383" Width="587">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="267*"/>
+            <RowDefinition Height="39*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="138*"/>
+            <ColumnDefinition Width="138*"/>
+        </Grid.ColumnDefinitions>
+        <DatePicker x:Name="Calendar" Grid.Column="1" Grid.ColumnSpan="2" SelectedDateChanged="Calendar_SelectedDateChanged"/>
+        <ListBox x:Name="ListZametka" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListZametka_SelectionChanged"/>
+        <Button x:Name="Delete" Content="Удалить" Grid.Row="2" Grid.Column="0" Margin="64,0,64,0" Background="Aquamarine" Click="Delete_Click" />
+        <Button x:Name="Save" Grid.Column="2" Content="Сохранить" Grid.Row="2" Background="Violet" Click="Save_Click"/>
+        <Button x:Name="Create" Grid.Column="1" Content="Создать" Grid.Row="2" Background="Beige" Click="Create_Click"/>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
+            <Label Grid.Column="1" Content="Назови заметку" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontFamily="Sitka Text" FontSize="16"/>
+            <TextBox x:Name="EnterName" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+            <Label x:Name="TextError" Height="20" FontSize="14" HorizontalContentAlignment="Center" Foreground="#FFF30000" />
+            <Label Grid.Column="1" Content="Опиши её" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontFamily="Sitka Text" FontSize="16"/>
+            <TextBox x:Name="EnterDescription" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
